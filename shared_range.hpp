@@ -305,7 +305,7 @@ inline void swap(shared_range<T>& a, shared_range<T>& b)
 }
 
 //! Are \c l and \c r semantically equivalent?
-//  To check if the \c l and \c r are identical, use <tt>l.equal(r)</tt>.
+//  To check if \c l and \c r are identical, use <tt>l.equal(r)</tt>.
 template< class T >
 inline bool operator==(const shared_range<T>& l, const shared_range<T>& r)
 {
@@ -317,8 +317,7 @@ inline bool operator==(const shared_range<T>& l, const shared_range<T>& r)
 }
 
 //! Are \c l and \c r not semantically equivalent?
-//! Are \c l and \c r semantically equivalent?
-//  To check if the \c l and \c r are not identical, use <tt>!l.equal(r)</tt>.
+//  To check if \c l and \c r are not identical, use <tt>!l.equal(r)</tt>.
 template< class T >
 inline bool operator!=(const shared_range<T>& l, const shared_range<T>& r)
 {
