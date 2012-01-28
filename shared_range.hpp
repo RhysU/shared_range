@@ -51,18 +51,17 @@
 // implementation therefore can be #included into any namespace.
 
 /*! \file
- *  Defines \c shared_range and related functions.  \c shared_range is an \c
- *  iterator_range subclass adding smart pointer-like resource ownership
- *  semantics.
+ *  \brief Defines \c shared_range and related functions.
  */
 
 /*!
- * A \c shared_range extends the functionality of \c iterator_range by adding
- * smart pointer-like resource ownership semantics.  Semantically, it resembles
- * a <tt>shared_array<T></tt> which "knows" its own length.  Instances assume
- * ownership of pointers provided to constructors and guarantee resources will
- * be deleted when the last \c shared_range pointing to them is destroyed or
- * reset.
+ * \brief A \c shared_range extends the functionality of \c iterator_range by adding
+ * smart pointer-like resource ownership.
+ *
+ * Semantically, \c shared_range resembles a <tt>shared_array<T></tt> which
+ * "knows" its own length.  Instances assume ownership of pointers provided to
+ * constructors and guarantee resources will be deleted when the last \c
+ * shared_range pointing to them is destroyed or reset.
  */
 template< class T >
 class shared_range
@@ -305,7 +304,7 @@ inline void swap(shared_range<T>& a, shared_range<T>& b)
 }
 
 //! Are \c l and \c r semantically equivalent?
-//  To check if \c l and \c r are identical, use <tt>l.equal(r)</tt>.
+//  To check if the \c l and \c r are identical, use <tt>l.equal(r)</tt>.
 template< class T >
 inline bool operator==(const shared_range<T>& l, const shared_range<T>& r)
 {
@@ -317,7 +316,8 @@ inline bool operator==(const shared_range<T>& l, const shared_range<T>& r)
 }
 
 //! Are \c l and \c r not semantically equivalent?
-//  To check if \c l and \c r are not identical, use <tt>!l.equal(r)</tt>.
+//! Are \c l and \c r semantically equivalent?
+//  To check if the \c l and \c r are not identical, use <tt>!l.equal(r)</tt>.
 template< class T >
 inline bool operator!=(const shared_range<T>& l, const shared_range<T>& r)
 {
