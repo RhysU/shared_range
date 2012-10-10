@@ -22,8 +22,10 @@ check-coverage: clean test_shared_range
 	./test_shared_range --log_level=test_suite
 	gcov test_shared_range.cpp
 
-test_shared_range: CXXFLAGS += -O0
-test_shared_range: test_shared_range.cpp shared_range.hpp
+test_shared_range.o: CXXFLAGS += -O0
+test_shared_range.o: test_shared_range.cpp shared_range.hpp
+test_shared_range: LDFLAGS  += -lstdc++
+test_shared_range: test_shared_range.o
 
 clean:
 	rm -fv $(PROGS) *.o *.gcno *.gcda *.gcov
