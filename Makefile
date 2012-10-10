@@ -1,4 +1,4 @@
-# GNU toolchain assumed.
+# GNU-compatible toolchain assumed.
 
 PROGS := test_shared_range
 all: $(PROGS)
@@ -24,7 +24,7 @@ check-coverage: clean test_shared_range
 
 test_shared_range.o: CXXFLAGS += -O0
 test_shared_range.o: test_shared_range.cpp shared_range.hpp
-test_shared_range: LDFLAGS  += -lstdc++
+test_shared_range: CC = $(CXX)
 test_shared_range: test_shared_range.o
 
 clean:
