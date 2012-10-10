@@ -1,4 +1,7 @@
+# Binaries
+test_shared_range
+
+# Miscellaneous
 *.gcda
 *.gcno
 *.gcov
-test_shared_range
