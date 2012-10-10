@@ -1,0 +1,4 @@
+*.gcda
+*.gcno
+*.gcov
+test_shared_range
