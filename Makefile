@@ -10,12 +10,12 @@ check: test_shared_range
 
 check-valgrind: test_shared_range
 	valgrind --suppressions=./boosttest.supp           \
-			 --num-callers=30                          \
-			 --memcheck:leak-check=full                \
-			 --memcheck:leak-resolution=high           \
-			 --memcheck:show-reachable=yes             \
-			 --memcheck:track-origins=yes              \
-			 ./test_shared_range --log_level=test_suite
+	         --num-callers=30                          \
+	         --memcheck:leak-check=full                \
+	         --memcheck:leak-resolution=high           \
+	         --memcheck:show-reachable=yes             \
+	         --memcheck:track-origins=yes              \
+	         ./test_shared_range --log_level=test_suite
 
 check-coverage: CXXFLAGS += --coverage
 check-coverage: clean test_shared_range
