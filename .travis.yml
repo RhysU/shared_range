@@ -3,6 +3,6 @@ compiler:
   - gcc
   - clang
 before_script:
-  - sudo apt-get update  -qq
-  - sudo apt-get install -qq libboost-dev
+  - sudo apt-get -qq update
+  - sudo apt-get -qq install libboost-dev
 script: make && make check
