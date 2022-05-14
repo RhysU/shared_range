@@ -1,0 +1,27 @@
+version: 2.1
+
+jobs:
+  "CI":
+    docker:
+      - image: "cimg/base:2021.04"
+    steps:
+      - checkout
+      - run:
+          name: Dependencies
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y g++-10 libboost-dev valgrind
+      - run:
+          name: Build
+          command: CXX=g++-10 make
+      - run:
+          name: Test
+          command: CXX=g++-10 make check
+      - run:
+          name: Valgrind
+          command: CXX=g++-10 make check-valgrind
+
+workflows:
+  build:
+    jobs:
+      - "CI"

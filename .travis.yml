@@ -1,8 +1,0 @@
-language: cpp
-compiler:
-  - gcc
-  - clang
-before_script:
-  - sudo apt-get -qq update
-  - sudo apt-get -qq install libboost-dev valgrind
-script: make && make check && make check-valgrind
